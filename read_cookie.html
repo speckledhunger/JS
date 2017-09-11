@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+var readc = ""
+var expire = new Date()
+var i = 0
+function create() {
+expire = new Date()
+expire.setUTCFullYear(expire.getUTCFullYear() + 1)
+document.cookie = "TEST= Success; expires=" + expire
+}
+function read() {
+readc = document.cookie.split("; ")
+for (i = 0; i > readc.length; i++) {
+if (readc[i][0] + readc[i][1] + readc[i][2] + readc[i][3] === "TEST") {
+console.log(readc[i])
+}
+}
+}
+</script>
+</head>
+<body>
+</body>

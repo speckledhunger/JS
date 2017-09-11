@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+var test = ["Matty", "Zephyr", "Harald", "Harold" , "Peter" , "Jason", "Terrence", "Johnson", "Marjorie"]
+var ca = 0
+var input = 0
+var arr = 0
+var pos
+var search = ""
+var cursearch = ""
+var repeat = 0
+function clearp() {
+document.getElementById("result").innerHTML = ""
+checkarray()
+}
+function checkarray() {
+if (document.getElementById("search").value !== "") {
+search = document.getElementById("search").value.toLocaleLowerCase()
+for (ca = 0; ca < test.length ; ca ++) {
+repeat = 0
+for (arr = 0; arr <  test[ca].length && repeat === 0; arr ++) {
+cursearch = ""
+for (pos = 0; pos < document.getElementById("search").value.length; pos ++) {
+cursearch += test[ca][arr + pos]
+}
+if (search === cursearch.toLocaleLowerCase()) {
+document.getElementById("result").innerHTML += (test[ca] + " found<br>")
+repeat = 1
+}
+}
+}
+}
+}
+</script>
+</head>
+<body>
+<input type="text" placeholder="Search" id="search"  onkeyup="clearp()"  onkeypress="clearp()" onkeydown"clearp()">
+<p id="result"></p>
+</body>
