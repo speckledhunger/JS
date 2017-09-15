@@ -32,14 +32,15 @@ repeat = 1
 }
 }
 }
-  function testappend() {
-    test.append(documnet.getElementById("addname").value)
+  function testpush() {
+    test.push(document.getElementById("addname").value)
+    document.getElementById("addname").value = ""
   }
 </script>
 </head>
 <body>
   <input type="text" placeholder="Search" id="search"  onkeyup="clearp()"  onkeypress="clearp()" onkeydown"clearp()">
   <input type="text placeholder="Add Name...." id="addname">
-  <button onclick=""></button>
-  <p id="result">Add to List</p>
+  <button onclick="testpush()">Add to List</button>
+  <p id="result"></p>
 </body>
